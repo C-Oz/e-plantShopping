@@ -9,7 +9,13 @@ const CartItem = ({ onContinueShopping }) => {
 
   // Calculate total amount for all products in the cart
   const calculateTotalAmount = () => {
- 
+    const totalAmount = 0; // OBV Wrong
+    cart.forEach(item => {
+        if (item.quantity > 0) {
+            totalAmount += item.quantity * item.cost;
+        }
+    });
+
   };
 
   const handleContinueShopping = (e) => {
